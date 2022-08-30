@@ -74,13 +74,13 @@ final route = GoRouter(
     ),
     GoRoute(
       name: 'tileScreen',
-      path: '/tilePage/:currentTile',
+      path: '/tilePage',
       pageBuilder: (context, state) {
-        final currentTile = int.parse(state.params['currentTile'] ?? '0');
+        final tile = int.parse(state.queryParams['currentTile'] ?? '0');
         return MaterialPage(
           key: state.pageKey,
           child: TilePage(
-            currentTile: currentTile,
+            currentTile: tile,
             //currentTile: state.extra as int,
           ),
         );

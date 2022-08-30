@@ -15,13 +15,20 @@ class TilePage extends StatelessWidget {
       body: Column(
         children: [
           ElevatedButton(
-              onPressed: () => context.goNamed('secondScreen'),
+              onPressed: () =>
+                  context.go('/tilePage?:currentTile=$currentTile'),
+
+              //context.goNamed('secondScreen'),
               child: const Text('goto second page')),
           Text(
-            context.namedLocation(
-              'tileScreen',
-              params: <String, String>{'currentTile': currentTile.toString()},
-            ),
+            'hi',
+            //context.go('/tilePage?currentTile=$currentTile')
+            // context.namedLocation(
+            //   'tileScreen',
+            //   queryParams: <String, String>{
+            //     'currentTile': currentTile.toString()
+            //   },
+            //),
           ),
         ],
       ),

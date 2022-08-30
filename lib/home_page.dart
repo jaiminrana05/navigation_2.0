@@ -44,11 +44,16 @@ class _MyHomePageState extends State<HomePage> {
             ...List.generate(
               10,
               (index) => ListTile(
-                onTap: () => context.goNamed(
-                  'tileScreen',
-                  params: <String, String>{'currentTile': index.toString()},
-                  //extra: index,
-                ),
+                onTap: () =>
+                    context.go('/tilePage?currentTile=${index.toString()}'),
+
+                //     context.goNamed(
+                //   'tileScreen',
+                //   queryParams: <String, String>{
+                //     'currentTile': index.toString()
+                //   },
+                //   //extra: index,
+                // ),
                 title: Text('Tile $index'),
               ),
             ),
