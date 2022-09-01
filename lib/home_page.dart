@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,6 +32,18 @@ class _MyHomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                document.documentElement?.requestFullscreen();
+              },
+              child: const Text('Enter Full Screen Mode'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                document.exitFullscreen();
+              },
+              child: const Text('Exit Full Screen Mode'),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
